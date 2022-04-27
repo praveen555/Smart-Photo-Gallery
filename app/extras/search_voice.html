@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %} {% block content %}
+
+<div style="margin: 10% auto">
+     <h3 style="text-align: center; color: cornflowerblue">
+          Which images do you want to search?
+     </h3>
+     <div style="text-align: center;">
+        <h4>Record your voice.</h4>
+        <p>
+            <button id="record" onclick="startRecord()">
+              Record
+            </button>
+            <button id="clearText" onclick="clearText()">
+              Clear
+            </button>
+            <button id="stopRecord" onclick="stopRecord()">
+              Stop
+            </button>
+            <form
+               action="{{url_for('search')}}"
+               enctype="multipart/form-data"
+               method="POST"
+            >
+
+                <h4>Transcription</h4>
+                <div id="output"></div>
+
+                <input required type="text" id="output-text" name="search" style="width: 74.5%"/>
+
+                <input id="searchLabels" type="submit" value="Search"/>
+            </form>
+        </p>
+       <script src="{{ url_for('static', filename='js/transcribe.js') }}"></script>
+     </div>
+</div>
+
+{% endblock %}
+
+<!--    <h1>Display images by Voice Search </h1>-->
+<!--    <p> Following commands are accepted in this version :</p>-->
+<!--    <li> Show all images of <"label>"</li>-->
+<!--    <li>Display pictures of <"label"</li>-->
+
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+
+<!--    <div id="controls">-->
+<!--     <button id="recordButton">Record</button>-->
+<!--     <button id="pauseButton" disabled>Pause</button>-->
+<!--     <button id="stopButton" disabled>Stop</button>-->
+<!--    </div>-->
+<!--    <div id="formats">Format: start recording to see sample rate</div>-->
+<!--    <p><strong>Recordings:</strong></p>-->
+<!--    <ol id="recordingsList"></ol>-->
+    <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+<!--    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>-->

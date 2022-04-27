@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+    <a style="font-size: larger;text-decoration: none;" href='{{url_for('image_upload')}}'>
+        <button>Back</button>
+    </a>
+    
+    <div>Key: {{x}}</div>
+
+    {% if msg==1 %}
+    <div>Image is replaced and memcache of this image is invalidated.</div>
+
+    {% elif msg==2 %}
+    <div>Image is replaced.</div>
+
+    {% elif msg==3 %}
+    <div>New Image is uploaded.</div>
+    <div>Uploaded Image:</div>
+    <img src="{{ user_image }}" width="600px" />
+    <div style='float:right'>
+        <table style="margin-left:800px">
+        <table>
+          <tr>
+            <th>Label</th>
+            <th>Confidence</th>
+          </tr>
+            {% for row in data %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+{% endblock %}

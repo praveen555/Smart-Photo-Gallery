@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Photo Gallery</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <a style="font-size: larger;text-decoration: none;" href='{{url_for('index')}}'>
+            <button>Index Page</button>
+        </a>
+        
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

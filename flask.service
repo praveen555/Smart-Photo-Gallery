@@ -1,0 +1,11 @@
+[Unit]
+Description=Mainapp
+
+[Service]
+ExecStart=/home/ubuntu/A3/start.sh
+WorkingDirectory=/home/ubuntu/A3
+Restart=always
+User=ubuntu
+
+[Install]
+WantedBy=multi-user.target

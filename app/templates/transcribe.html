@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<h3 style="text-align: center; color: cornflowerblue">
+     This page displays results of AWS Transcribe
+</h3>
+<body>
+<p> {{ status }} </p>
+{% if status==1 %}
+<h4> The audio file is received at server end </h4>
+{% else %}
+<h4> The audio file is not received at server end </h4>
+{% endif %}
+</body>
+
+{% endblock %}

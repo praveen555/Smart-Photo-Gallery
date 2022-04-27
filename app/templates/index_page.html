@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Photo Gallery</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body style="margin-top: 5%">
+        <h1 style="text-align: center">Photo Gallery</h1>
+        <h3 style="text-align: center; color: cornflowerblue">Menu</h3>
+        <div style="text-align: center">
+            <div><a style="font-size: larger;text-decoration: none;" href='{{url_for("image_upload")}}'>
+                <button>Upload Image </button>
+            </a></div>
+            <br/>
+            <div><a style="font-size: larger;text-decoration: none;" href='{{url_for("all_images")}}'>
+                <button>View all images </button>
+            </a></div>
+            <div><a style="font-size: larger;text-decoration: none;" href='{{url_for("search_label")}}'>
+                <button>Search Images </button>
+            </a></div>
+            <br/>
+            <div><a style="font-size: larger;text-decoration: none;" href='{{url_for("clear_data")}}'>
+                <button>Delete all images </button>
+            </a></div>
+<!--            <div><a style="font-size: larger;text-decoration: none;" href='{{url_for("gallery_stats")}}'>-->
+<!--                <button> Statistics </button>-->
+<!--                </a></div>-->
+            <br/>
+            <br/>
+            
+        </div>
+    </body>
+</html>

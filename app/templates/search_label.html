@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %} {% block content %}
+
+<div style="margin: 10% auto">
+     <h3 style="text-align: center; color: cornflowerblue">
+          Which images do you want to search?
+     </h3>
+     <div style="text-align: center;">
+       <form
+          action="{{url_for('search')}}"
+          enctype="multipart/form-data"
+          method="POST"
+       >
+
+           <div id="output" style="visibility: hidden"></div>
+
+           <input required type="text" id="output-text" name="search" style="width: 74.5%"/>
+
+           <input id="searchLabels" type="submit" value="Search"/>
+       </form>
+        <h4>Record your voice.</h4>
+       <button id="record" onclick="startRecord()">
+         Record
+       </button>
+       <button id="clearText" onclick="clearText()">
+         Clear
+       </button>
+       <button id="stopRecord" onclick="stopRecord()">
+         Stop
+       </button>
+       <script src="{{ url_for('static', filename='js/transcribe.js') }}"></script>
+     </div>
+</div>
+
+{% endblock %}

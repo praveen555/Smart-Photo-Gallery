@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+
+<div style="margin: auto">
+     <h3 style="text-align: center; color: cornflowerblue">
+          All Images
+     </h3>
+     <div style="align-content: center;">
+          {% if len==0 %}
+               <h5 style="width: fit-content; margin: 0 auto;">There are no images in the drive.</h5>
+          {% else %}
+               {% for image in images %}
+                    <div style="display: inline-block; align-content: center;"
+                         class="tooltip">
+                         <img src={{"https://a2-13032022.s3.amazonaws.com/images/"+image['image']}}
+                              class="images"
+                              style="text-align: center;
+                                     margin: auto;
+                                     max-width: 100%;
+                                     max-height: 420px"/>
+                         <span class="tooltiptext">
+                              {% for label in image['labels'] %}
+                                   {{label}} <br/>
+                              {% endfor %}
+                         </span>
+                    </div>
+               {% endfor %}
+          {% endif %}
+     </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+
+<h3 style="text-align: center; color: cornflowerblue">
+    Upload an Image
+</h3>
+<div style="margin: 5% 20%">
+    <h4>Select an image</h4>
+    <form
+        action="{{url_for('display_image')}}"
+        enctype="multipart/form-data"
+        method="POST"
+    >
+        <input
+            required
+            type="file"
+            name="img_file"
+            accept=".png, .jpg, .jpeg"
+            style="width: 100%"
+        />
+        <br />
+        {% if msg==-1 %}
+        <p>Please input file of type .png, .jpeg only.</p>
+        {% endif %}
+        <br />
+<!--        <h4>Enter the key of the image (Numerical)</h4>-->
+
+<!--        <input required type="number" , name="key" />-->
+        <br />
+        <br />
+        <input type="submit" , value="Submit" />
+    </form>
+</div>
+{% endblock %}

@@ -1,9 +1,9 @@
 # Credentials
-aws_access_key_id = "AKIAQGOWDODFP7S4CA4T"
-aws_secret_access_key = "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"
-region_name = "us-east-1"
+aws_access_key_id =""
+aws_secret_access_key = ""
+region_name = ""
 
 # S3
-bucket = "a2-13032022"
-aws_url = "https://a2-13032022.s3.amazonaws.com/"
-s3_key_url = "https://a2-13032022.s3.amazonaws.com/images/"
+bucket = ""
+aws_url = ""
+s3_key_url = ""
